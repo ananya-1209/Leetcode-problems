@@ -2,22 +2,13 @@
 
 int main() {
     int N, deleteElement;
-
-    // Read the size of the list
     scanf("%d", &N);
-
-    // Declare an array of size N
     int arr[N];
 
-    // Read N elements into the array
     for (int i = 0; i < N; i++) {
         scanf("%d", &arr[i]);
     }
-
-    // Read the element to be deleted
     scanf("%d", &deleteElement);
-
-    // Find the first occurrence of the deleteElement
     int i;
     for (i = 0; i < N; i++) {
         if (arr[i] == deleteElement) {
@@ -25,12 +16,10 @@ int main() {
             for (int j = i; j < N - 1; j++) {
                 arr[j] = arr[j + 1];
             }
-            N--;  // Decrease the size of the array
-            break;  // Stop after deleting the first occurrence
+            N--; 
+            break; 
         }
     }
-
-    // Print the updated list
     for (int i = 0; i < N; i++) {
         printf("%d", arr[i]);
         if (i < N - 1) {
